@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AnimateAnywhere: Rouse the Background in Human Image Animation</title>
+  <title>AnimateAnywhere: Rouse the Background <br> in Human Image Animation</title>
   <script id="MathJax-script" async
           src="./asset/MathJax/es5/tex-mml-chtml.js">
   </script>
@@ -85,7 +85,7 @@
 
   <div class="content">
         <h1><strong>
-          AnimateAnywhere: Rouse the Background in Human Image Animation
+          AnimateAnywhere: Rouse the Background <br> in Human Image Animation
         </strong></h1>
         <p id="authors">
           <span><a href=""></a></span>
@@ -93,13 +93,13 @@
           <a href="" style="pointer-events: none; text-decoration:none; color: black;">Mingshuai Yao</a><sup style="margin-left: -7px;">1</sup>
           <a href="" style="pointer-events: none; text-decoration:none; color: black;">Yabo Zhang</a><sup style="margin-left: -7px;">1</sup>
           <a href="" style="pointer-events: none; text-decoration:none; color: black;"> Xianhui Lin</a>
-          <a href="" style="pointer-events: none; text-decoration:none; color: black;">Peiran Ren</a>
+          <a href="" style="pointer-events: none; text-decoration:none; color: black;">Peiran Ren</a><br>
           <a href="" style="pointer-events: none; text-decoration:none; color: black;">Xiaoming Li</a><sup style="margin-left: -7px;">2</sup>
           <a href="" style="pointer-events: none; text-decoration:none; color: black;">Ming Liu</a><sup style="margin-left: -7px;">1</sup>
           <a href="" style="pointer-events: none; text-decoration:none; color: black;">Wangmeng Zuo</a><sup style="margin-left: -7px;">1</sup>
           <br><br>
-          <span style="font-size: 22px;"><sup>1</sup> Harbin Institute of Technology, Harbin, China</span>
-          <span style="font-size: 22px;"><sup>2</sup> Harbin Institute of Technology, Harbin, China</span>
+          <span style="font-size: 20px;"><sup>1</sup> Harbin Institute of Technology, Harbin, China</span>
+          <span style="font-size: 20px;"><sup>2</sup> Nanyang Technological University, Singapore</span>
           <!-- <br> -->
           &nbsp;&nbsp;&nbsp;
         </p>
@@ -107,13 +107,13 @@
         <!-- <img src="./asset/abstract.png" class="teaser-gif" style="width:70%"> -->
         <video src="./asset/abstrect.mp4" loop autoplay muted style="width: 100%;"></video>
         <br>
-        <p style="text-align: center; font-size: 25px;">
+        <p style="text-align: center;">
           <em style="text-align: justify">
             Comparison with existing paradigms of human image animation. (a) Human animation with static backgrounds: Animate Anyone, Champ, and etc. They only generate static backgrounds. (b) Human animation with dynamic backgrounds guided by background motion conditions: Humanvid, Liu et al., and etc. They extract background motion conditions of reference videos to guide the movement of the background.
 However, extracting background motion conditions paired with human poses heavily relies on reference videos, which are often unavailable in practice. (c) Ours: Human animation with dynamic backgrounds synchronized with human poses. Our paradigm learns the background movements for human poses.
           </em>
         </p>
-        <p style="text-align: center; font-size: 30px;">
+        <p style="text-align: center; font-size: 25px;">
           <a href="https://arxiv.org/pdf/2404.06451v1.pdf" target="_blank">[Paper]</a>
           <!-- &nbsp;&nbsp;&nbsp;
           <a href="./assert/bibtex.txt" target="_blank">[BibTeX]</a> -->
@@ -124,7 +124,7 @@ However, extracting background motion conditions paired with human poses heavily
 
       <div class="content">
         <h2 style="text-align: center;"><strong>The Framework of AnimateAnywhere</strong></h2>
-        <p style="text-align: justify; padding: 0 15px; font-size: 25px;">
+        <p style="text-align: justify; padding: 0 15px;">
           Overview Pipeline of AnimateAnywhere. Given a reference background image, a reference human image, and a human pose sequence as inputs, AnimateAnywhere generates photorealistic videos with synchronized motion of both the human and the background. Built upon CogVideoX, we employ a ControlNet to inject human pose sequences and a ReferenceNet to incorporate the reference human. The background image is concatenated with noise to inject background appearance, while a Background Motion Learner (BML) predicts background motion from the pose sequence. (b) 3D Attention with Epipolar Constraint. (b)-(1) The \( i \)-th video frame. (b)-(2) Vanilla 3D attention map \( \mathbf{A}_{ij}(u,v) \) represents the model-learned attention weights from pixel \( (u,v) \) in the \( i \)-th frame to all positions in the \( j \)-th frame. (b)-(3) Epipolar mask \( \mathbf{M}_{ij}(u,v) \) defines the geometrically valid region in the \( j \)-th frame. (b)-(4) Attention activation mask \( \mathbf{1} - \mathbf{\Omega}_{ij}(u,v) \) highlights the retained attention regions without constraint. Adaptive suppression mask \( \mathbf{\Omega}_{ij}(u,v) \) selectively constrains low-confidence attention outside the epipolar region. (b)-(5) Target 3D attention map under our epipolar constraint. Our loss function is equivalent to computing the difference between \( \mathbf{A}_{ij}(u,v) \) and this target map.
         </p>
         <img class="summary-img" src="./asset/method.svg" style="width:100%;"><br><br>
@@ -133,7 +133,7 @@ However, extracting background motion conditions paired with human poses heavily
 
   <section class="content">
     <h2 style="text-align: center;"><strong>Qualitative comparison on Humanvid test dataset</strong></h2>
-    <p style="text-align: justify; padding: 0 15px; font-size: 25px;">
+    <p style="text-align: justify; padding: 0 15px; ">
       Qualitative comparisons on the Humanvid test dataset  clearly demonstrate the superiority of our proposed method in generating photorealistic videos. Notably, our approach ensures coherent and harmonious motion between the foreground and background. 
     </p>
   
@@ -172,7 +172,7 @@ However, extracting background motion conditions paired with human poses heavily
 
   <section class="content">
     <h2 style="text-align: center;"><strong> Qualitative comparisons on the BL200 test dataset</strong></h2>
-    <p style="text-align: justify; padding: 0 15px; font-size: 25px;">
+    <p style="text-align: justify; padding: 0 15px; ">
       Qualitative comparisons on the BL200 test dataset shows that our approach not only generates realistic background motion but also maintains high quality, temporally consistent animation of both the human and the background.
     </p>
 
@@ -313,7 +313,7 @@ setupCarousel('carousel-3', 'thumbnail-3');
 
   <section class="content">
     <h2 style="text-align: center;"><strong>More Videos</strong></h2>
-    <p style="text-align: justify;  padding: 0 15px; font-size: 25px;">
+    <p style="text-align: justify;  padding: 0 15px; ">
       We provide more results for both horizontal and vertical videos. Our approach demonstrates robust background motion across diverse human poses, including translational movements (vertical, horizontal, forward, backward) and rotation.
     </p>
     <div class="vertical-container" style="padding: 0px; max-width: 100%; margin: auto;">
@@ -346,7 +346,7 @@ setupCarousel('carousel-3', 'thumbnail-3');
     <h2 style="text-align: center;"><strong>Ablation Study</strong></h2>
     <div class="vertical-container" style="padding: 0px; max-width: 100%; margin: auto;">
       <!-- Instance 1 -->
-      <p style="text-align: justify;  padding: 0 15px; font-size: 25px;">
+      <p style="text-align: justify;  padding: 0 15px; ">
         We investigate the effect of the epipolar loss, foundational framework, and the VGG Loss.
       </p>
       <div class="comparison-group" style="min-width: 100%;">
